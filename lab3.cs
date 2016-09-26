@@ -20,6 +20,7 @@ namespace ConsoleApplication2
             {
                 s += i;
             }
+            Console.ReadKey();
         }
             
          static void p2()
@@ -33,11 +34,38 @@ namespace ConsoleApplication2
                     Console.WriteLine(i);
                 }
             }
+            Console.ReadKey();
+
         }
         
         static void p3()
         {
+            Console.WriteLine("Введите количество посетителей");          
+            int [] mas = new int[int.Parse(Console.ReadLine())];
+            int i = 0;
+            int o = 0;
+            int y = 100;
+            int s = 0;
+            while (i !=mas.Length)
+            {
+                Console.WriteLine("Введите возраст {0} посетителя", i + 1);
+                mas[i] = int.Parse(Console.ReadLine());
+                if (mas[i]<y)
+                {
+                    y = mas[i];
+                }
+                if (mas[i]>o)
+                {
+                    o = mas[i];
+                }
+                s = s + mas[i];
+                i++;
+            }
+            Console.WriteLine("Самый молодой посетитель - {0}", y);
+            Console.WriteLine("Самый старший посетитель - {0}", o);
+            Console.WriteLine("Средний возраст - {0}", s / mas.Length);
 
+            Console.ReadKey();
         }           
 
         static void p4()
@@ -51,11 +79,16 @@ namespace ConsoleApplication2
                 {
                     k += y;
                 }
+                else
+                {
+                    Console.WriteLine("Ящиков недостаточно");
+                }
                 if (k >= 15)
                 {
                     Console.WriteLine("Ящиков недостаточно"); break;
                 }
             }
+            Console.ReadKey();
         }
 
         static void p5()
